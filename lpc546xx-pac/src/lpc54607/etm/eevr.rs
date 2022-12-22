@@ -1,0 +1,81 @@
+#[doc = "Register `EEVR` reader"]
+pub struct R(crate::R<EEVR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EEVR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EEVR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EEVR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EEVR` writer"]
+pub struct W(crate::W<EEVR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EEVR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EEVR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EEVR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TraceEnableEvent` reader - Trace Enable event."]
+pub type TRACE_ENABLE_EVENT_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `TraceEnableEvent` writer - Trace Enable event."]
+pub type TRACE_ENABLE_EVENT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EEVR_SPEC, u32, u32, 17, O>;
+impl R {
+    #[doc = "Bits 0:16 - Trace Enable event."]
+    #[inline(always)]
+    pub fn trace_enable_event(&self) -> TRACE_ENABLE_EVENT_R {
+        TRACE_ENABLE_EVENT_R::new((self.bits & 0x0001_ffff) as u32)
+    }
+}
+impl W {
+    #[doc = "Bits 0:16 - Trace Enable event."]
+    #[inline(always)]
+    pub fn trace_enable_event(&mut self) -> TRACE_ENABLE_EVENT_W<0> {
+        TRACE_ENABLE_EVENT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Trace Enable Event Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [eevr](index.html) module"]
+pub struct EEVR_SPEC;
+impl crate::RegisterSpec for EEVR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [eevr::R](R) reader structure"]
+impl crate::Readable for EEVR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [eevr::W](W) writer structure"]
+impl crate::Writable for EEVR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets EEVR to value 0"]
+impl crate::Resettable for EEVR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}
